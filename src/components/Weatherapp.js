@@ -15,7 +15,7 @@ function Weatherapp() {
             .then((response) => response.json())
             .then((data) => {
                 if (!data.error) {
-                    setweatherData(data);  
+                    setweatherData(data);
                 }
                 setloading(false);
             })
@@ -39,10 +39,11 @@ function Weatherapp() {
                         <i class="fa-solid fa-magnifying-glass" onClick={clickHandler}></i>
                     </div>
 
-                    {loading === true && <img className="loadingImage"
-                        src={loadingImage}
-                        alt="Loading..."
-                    />}
+
+                    {loading === true &&
+                        <div className="loadingImage">
+                            <img src={loadingImage} alt="Loading..."/>
+                        </div>}
 
                     {weatherData ?
                         <div className="showData">
