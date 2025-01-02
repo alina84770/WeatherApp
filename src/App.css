@@ -8,14 +8,14 @@ body{
 
 }
 div.container {
-  width: 100%;
   display: flex;
   justify-content: center;
  
 }
 
 div.weatherapp {
-  min-width: 40%;
+  width: 90%; /* Default width for smaller screens */
+  max-width: 500px; /* Limits the width for larger screens */
   background-color: rgba(241, 171, 40, 0.4);
   border: 2px solid rgb(243, 186, 80);
   display: flex;
@@ -23,8 +23,9 @@ div.weatherapp {
   align-items: center;
   margin-top: 1rem;
   border-radius: 10px;
-  padding-bottom: 20px;
+  padding: 20px 20px 25px;
   cursor: pointer;
+  box-sizing: border-box;/* Ensures padding doesn't affect width */
 }
 
 h1.heading {
@@ -35,6 +36,7 @@ h1.heading {
 div.input {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 div.input input {
@@ -97,21 +99,9 @@ h3 {
   color: white
 }
 
-@media(max-width:1000px){
+@media(max-width:450px){
   div.input input{
-    width: 16rem;
-    padding: 8px;
-  }
-  div.weatherapp{
-    padding:0 3rem 1rem;
-  } 
-  div.weatherImage img{
-    width:5rem;
-  }
-}
-@media(max-width:750px) {
-  div.input input{
-    width: 17rem;
+    width: 15rem;
     padding: 6px;
   }
   div.weatherapp{
