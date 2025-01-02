@@ -6,18 +6,18 @@ function Weatherapp() {
     const [location, setlocation] = useState("");
     const [weatherData, setweatherData] = useState(null);
     const [query, setquery] = useState("");
-    const [loading, setloading] = useState("false");
+    const [loading, setloading] = useState(false);
 
     useEffect(() => {
 
-        setloading("true");
-        fetch(`http://api.weatherapi.com/v1/current.json?key=033d4d209ec04554966135639241211&q=${location}`)
+        setloading(true);
+        fetch(`https://api.weatherapi.com/v1/current.json?key=033d4d209ec04554966135639241211&q=${location}`)
             .then((response) => response.json())
             .then((data) => {
                 if (!data.error) {
                     setweatherData(data);  
                 }
-                setloading("false");
+                setloading(false);
             })
         setlocation("");
 
@@ -39,7 +39,7 @@ function Weatherapp() {
                         <i class="fa-solid fa-magnifying-glass" onClick={clickHandler}></i>
                     </div>
 
-                    {loading === "true" && <img className="loadingImage"
+                    {loading === true && <img className="loadingImage"
                         src={loadingImage}
                         alt="Loading..."
                     />}
